@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Page avec Bouton</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Mémoire de fin d'études</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      border-bottom: 1px solid #ccc;
+    }
+    h1 {
+      color: #0066cc;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Bienvenue sur ma page</h1>
+  <nav>
+    <a href="#couverture">Couverture</a>
+    <a href="#arborescence">Arborescence</a>
+    <a href="#introduction">Introduction</a>
+    <a href="#contenu">Contenu</a>
+    <a href="#conclusion">Conclusion</a>
+  </nav>
 
-    <button onclick="afficherMessage()">Clique ici</button>
+  <section id="couverture">
+    <h1>Page de couverture</h1>
+    <p><strong>Nom :</strong> Hamad Said<br>
+       <strong>Formation :</strong> Maintenance industrielle<br>
+       <strong>Année :</strong> 2025
+    </p>
+  </section>
 
-    <script>
-        function afficherMessage() {
-            alert("Tu as cliqué sur le bouton !");
+  <section id="arborescence">
+    <h1>Arborescence du mémoire</h1>
+    <ul>
+      <li>1. Introduction</li>
+      <li>2. Méthodologie</li>
+      <li>3. Analyse technique</li>
+      <li>4. Résultats</li>
+      <li>5. Conclusion</li>
+    </ul>
+  </section>
+
+  <section id="introduction">
+    <h1>Introduction</h1>
+    <p>Ce mémoire présente une étude sur la maintenance industrielle dans les entrepôts logistiques modernes...</p>
+  </section>
+
+  <section id="contenu">
+    <h1>Contenu</h1>
+    <p>La méthodologie utilisée inclut des observations sur le terrain, des relevés de panne et une analyse des outils de GMAO...</p>
+  </section>
+
+  <section id="conclusion">
+    <h1>Conclusion</h1>
+    <p>La maintenance industrielle joue un rôle clé dans la performance logistique. Ce mémoire a permis de dégager plusieurs recommandations...</p>
+  </section>
+
+</body>
+</html>
+
