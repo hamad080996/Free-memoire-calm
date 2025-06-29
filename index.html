@@ -2,83 +2,94 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mémoire de fin d'études</title>
+  <title>Page Unique</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       margin: 0;
-      scroll-behavior: smooth;
-    }
-    nav {
-      background-color: #333;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
+      padding: 0;
+      background-color: #3498db;
       color: white;
-      margin-right: 15px;
-      text-decoration: none;
+      text-align: center;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .section {
+      display: none;
+      padding: 40px;
     }
-    section {
-      padding: 100px 20px;
-      min-height: 100vh;
-      border-bottom: 1px solid #ccc;
+
+    .active {
+      display: block;
     }
-    h1 {
-      color: #0066cc;
+
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #3498db;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+      text-align: left;
+      display: inline-block;
+      color: #f1f1f1;
+    }
+
+    ul li::before {
+      content: " ";
+      color: #f9ca24;
+    }
+
+    ul ul li::before {
+      content: " ";
+      color: #00ffcc;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#couverture">Couverture</a>
-    <a href="#arborescence">Arborescence</a>
-    <a href="#introduction">Introduction</a>
-    <a href="#contenu">Contenu</a>
-    <a href="#conclusion">Conclusion</a>
-  </nav>
+  <!-- Page 1 : Page de couverture -->
+  <div id="page1" class="section active">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Ceci est la page de couverture.</p>
+    <button class="button" onclick="switchTo('page2')">Voir le plan</button>
+  </div>
 
-  <section id="couverture">
-    <h1>Page de couverture</h1>
-    <p><strong>Nom :</strong> Hamad Said<br>
-       <strong>Formation :</strong> Maintenance industrielle<br>
-       <strong>Année :</strong> 2025
-    </p>
-  </section>
-
-  <section id="arborescence">
-    <h1>Arborescence du mémoire</h1>
+  <!-- Page 2 : Plan en arborescence -->
+  <div id="page2" class="section">
+    <h1>Plan du site</h1>
     <ul>
-      <li>1. Introduction</li>
-      <li>2. Méthodologie</li>
-      <li>3. Analyse technique</li>
-      <li>4. Résultats</li>
-      <li>5. Conclusion</li>
+      <li>Accueil</li>
+      <li>À propos</li>
+      <li>Services
+        <ul>
+          <li>maintenance</li>
+          <iframe src:"storage/emulated/documents/coursM.pdf width="600" height="400"></iframe>
+
+<ul>
+  <li>cours de maintenance</li>
+</ul>
+          
+          <li>Installation</li>
+        </ul>
+      </li>
+      <li>Contact</li>
     </ul>
-  </section>
-
-  <section id="introduction">
-    <h1>Introduction</h1>
-    <p>Ce mémoire présente une étude sur la maintenance industrielle dans les entrepôts logistiques modernes...</p>
-  </section>
-
-  <section id="contenu">
-    <h1>Contenu</h1>
-    <p>La méthodologie utilisée inclut des observations sur le terrain, des relevés de panne et une analyse des outils de GMAO...</p>
-  </section>
-
-  <section id="conclusion">
-    <h1>Conclusion</h1>
-    <p>La maintenance industrielle joue un rôle clé dans la performance logistique. Ce mémoire a permis de dégager plusieurs recommandations...</p>
-  </section>
-
+    <button class="button" onclick="switchTo('page1')">← Retour</button>
+ </div>   
+<script>
+    function switchTo(id) {
+      document.getElementById('page1').classList.remove('active');
+       document.getElementById('page2').classList.remove('active');
+      document.getElementById(id).classList.add('active');
+    }
+  
+  </script>
 </body>
 </html>
-
